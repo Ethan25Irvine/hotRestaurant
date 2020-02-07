@@ -43,18 +43,18 @@
               </div>
 
               <div class="form-group">
-                <label for="role">Email</label>
-                <input type="text" class="form-control" id="role">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email">
               </div>
 
               <div class="form-group">
-                <label for="age">Phone Number</label>
-                <input type="text" class="form-control" id="age">
+                <label for="phone">Phone Number</label>
+                <input type="text" class="form-control" id="phone">
               </div>
 
               <div class="form-group">
-                <label for="force-points">Size of Party</label>
-                <input type="text" class="form-control" id="force-points">
+                <label for="partysize">Size of Party</label>
+                <input type="text" class="form-control" id="partysize">
               </div>
 
             </form>
@@ -72,7 +72,25 @@
     </footer>
 
   </div>
+  <script type="text/javascript">
+    // Question: What does this code do?
+    $("#add-btn").on("click", function(event) {
+      event.preventDefault();
+      var newReservation = {
+        name: $("#name").val().trim(),
+        email: $("#email").val().trim(),
+        phoneNum: $("#phone").val().trim(),
+        partySize: $("#partysize").val().trim()
+      };
 
+      // Question: What does this code do??
+      $.post("/api/reservations", newReservation)
+        .then(function(data) {
+          console.log("reserve.html", data);
+          alert("Adding a Reservation...");
+        });
+    });
+  </script>
 
 </body>
 </html>
