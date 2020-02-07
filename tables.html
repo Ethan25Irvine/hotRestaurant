@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tables Page</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="jumbotron">
+      <h1 class="text-center"><span class="fa fa-fire"></span> Hot Restaurant</h1>
+      <hr>
+      <h2 class="text-center">We only have 5 tables! Book your seat before they all are gone!</h2>
+      <br>
+
+      <div class="text-center">
+        <a href="/tables"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span> View Tables</button></a>
+        <a href="/reserve"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> Make Reservation</button></a>
+      </div>
+
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+          <h3><strong>Current Reservations</strong></h3>
+        </div>
+        <div class="card-body">
+          <div id="stats">
+            <h3><strong>Name:</strong> <span id="name">John Smith</span></h3>
+            <h3><strong>E-mail:</strong> <span id="name">JSmith@aol.com</span></h3>
+            <h3><strong>Phone number:</strong> <span id="phone">555-555-5555</span></h3>
+            <h3><strong>Size:</strong> <span id="size">Smith Birthday</span></h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3><strong>Waiting List</strong></h3>
+        </div>
+        <div class="card-body">
+          <div id="stats">
+            <h3><strong>Name:</strong> <span id="waitName">Jedi Masters</span></h3>
+            <h3><strong>E-mail:</strong> <span id="name">JediMasters@hotmail.com</span></h3>
+            <h3><strong>Phone Number:</strong> <span id="waitPhone">444-444-4444</span></h3>
+            <h3><strong>Size:</strong> <span id="waitSize">2000</span></h3>
+        </div>
+      </div>
+      </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a>
+      </div>
+    </footer>
+
+  </div>
+
+
+</body>
+</html>
