@@ -12,13 +12,13 @@ var PORT = process.env.PORT || 3050;
         console.log("App listening on PORT " + PORT);
     });
 // }
-const reservation = [ 
+var reservations = [ 
     {
     routeName: "obiwankenobi",
     name: "Obi Wan Kenobi",
-    role: "Jedi Master",
-    age: 55,
-    forcePoints: 1350
+    email: "Jedi Master",
+    phone: 55,
+    partySize: 1350
   }
 ];
 const waitlist = [];
@@ -28,34 +28,12 @@ app.get("/api/tables", function(req, res) {
   });
   app.get("/api/waitlist", function(req, res) {
     return res.json(waitlist);
-<<<<<<< HEAD
-=======
   });
-  app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "home.html"));
-  });
-  
-  app.get("/reserve", function(req, res) {
-    res.sendFile(path.join(__dirname, "reserve.html"));
-  });
-  app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "tables.html"));
-  });
-  
 
-  app.post("/api/tables", function(req, res) {
-    // req.body hosts is equal to the JSON post sent from the user
-    // This works because of our body parsing middleware
-    const newReservation = req.body;
-  
-    // Using a RegEx Pattern to remove spaces from newReservation
-    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-    newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
-  
-    console.log(newReservation);
-  
-    reservation.push(newReservation);
-  
-    res.json(newReservation);
->>>>>>> fb8d7bcb2cd56e527a71e62ea0ede959f41726b8
-  });
+app.post("./api/reservations", function(req, res) {
+  var newReservation = req.body;
+  newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
+  console.log(newReservation);
+  reservations.push(newReservation);
+  res.json(newReservation);
+});
