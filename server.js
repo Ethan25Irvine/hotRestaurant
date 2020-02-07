@@ -1,8 +1,8 @@
-var express = require("express");
-var app = express();
-var path = require("path");
+const express = require("express");
+const app = express();
+const path = require("path");
 
-var PORT = process.env.PORT || 3050;
+const PORT = process.env.PORT || 3050;
 // function runApp (){
     // Sets up the Express app to handle data parsing
     app.use(express.urlencoded({ extended: true }));
@@ -12,14 +12,8 @@ var PORT = process.env.PORT || 3050;
         console.log("App listening on PORT " + PORT);
     });
 // }
-var reservations = [ 
-    {
-    routeName: "obiwankenobi",
-    name: "Obi Wan Kenobi",
-    email: "Jedi Master",
-    phone: 55,
-    partySize: 1350
-  }
+const reservations = [ 
+ 
 ];
 const waitlist = [];
 
@@ -39,8 +33,8 @@ app.get("/api/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
   });
 
-app.post("./api/reservations", function(req, res) {
-  var newReservation = req.body;
+app.post("/api/reservations", function(req, res) {
+  const newReservation = req.body;
   newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
   console.log(newReservation);
   reservations.push(newReservation);
